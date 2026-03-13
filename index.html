@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ==========================================================================
+   VARIABLES: Paleta "Seguridad y Control"
+   ========================================================================== */
+:root {
+    --bg-color: #e6e9ef;
+    --card-bg: #e6e9ef;
+    --text-main: #2c3e50;
+    --text-sec: #576574;
+    --accent: #2980b9; /* Azul Seguridad */
+    --accent-hover: #3498db;
+    --danger: #e74c3c;
+    --success: #27ae60;
+    --shadow-dark: #ced4da;
+    --shadow-light: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e272e;
+    --card-bg: #1e272e;
+    --text-main: #f5f6fa;
+    --text-sec: #d2dae2;
+    --shadow-dark: #0f1418;
+    --shadow-light: #2d3436;
+}
+
+/* ==========================================================================
+   ESTILOS BASE
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 span {
+    display: block;
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   CONTROLES DE ASIGNACIÓN (Buscador/Selector)
+   ========================================================================== */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.search-box input, .search-box select {
+    flex: 1;
+    min-width: 150px;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    box-shadow: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+    color: var(--text-main);
+    outline: none;
+}
+
+.search-box button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px var(--shadow-dark);
+    transition: transform 0.2s;
+}
+
+.search-box button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   GRID DEL CUADRANTE
+   ========================================================================== */
+.grid-cuadrante {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.mes-card {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 9px 9px 18px var(--shadow-dark), -9px -9px 18px var(--shadow-light);
+}
+
+.mes-card h3 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--accent);
+    border-bottom: 2px solid var(--shadow-dark);
+    padding-bottom: 10px;
+}
+
+.quincena-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.q-box {
+    padding: 10px;
+    border-radius: 15px;
+    background: var(--card-bg);
+    box-shadow: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+}
+
+.q-box strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: var(--text-sec);
+    text-transform: uppercase;
+}
+
+/* LISTA DE VIGILANTES */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: var(--card-bg);
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+    animation: fadeIn 0.3s ease;
+}
+
+.hueco-libre {
+    color: var(--success);
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    box-shadow: none;
+    border: 1px dashed var(--shadow-dark);
+}
+
+li button {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   FOOTER (Tu sello de identidad)
+   ========================================================================== */
+footer {
+    margin-top: 60px;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--shadow-dark);
+    color: var(--text-sec);
+}
+
+footer span {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <span class="header-icon">📅</span>
+        <h1>Gestión de Vacaciones <span>Las Terrazas de la Torre</span></h1>
+        <p class="header-subtitle" id="frase-gestion">Planifica los turnos del equipo de seguridad.</p>
+    </header>
+
+    <div class="search-box">
+        <input type="text" id="nombre-empleado" placeholder="Nombre del vigilante...">
+        <select id="select-mes">
+            <option value="0">Enero</option>
+            <option value="1">Febrero</option>
+            <option value="2">Marzo</option>
+            <option value="3">Abril</option>
+            <option value="4">Mayo</option>
+            <option value="5">Junio</option>
+            <option value="6">Julio</option>
+            <option value="7">Agosto</option>
+            <option value="8">Septiembre</option>
+            <option value="9">Octubre</option>
+            <option value="10">Noviembre</option>
+            <option value="11">Diciembre</option>
+        </select>
+        <select id="select-quincena">
+            <option value="q1">1ª Quincena (1-15)</option>
+            <option value="q2">2ª Quincena (16-31)</option>
+        </select>
+        <button onclick="asignarVacaciones()">Asignar</button>
+    </div>
+
+    <div id="cuadrante-container" class="grid-cuadrante">
+        </div>
+
+    <footer id="footer-app">
+        &copy; <span id="year"></span> - Seguridad Las Terrazas de la Torre - <span>javilindj</span>
+    </footer>
+</div>
+
+<script>
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+// Estado inicial: 12 meses, cada uno con 2 quincenas, cada quincena con un array vacío de empleados
+let cuadrante = JSON.parse(localStorage.getItem('vacaciones_seguridad')) || 
+    meses.map(mes => ({
+        nombre: mes,
+        q1: [], // Máximo 2 nombres
+        q2: []  // Máximo 2 nombres
+    }));
+
+function renderizarCuadrante() {
+    const container = document.getElementById('cuadrante-container');
+    container.innerHTML = "";
+
+    cuadrante.forEach((mes, index) => {
+        const mesCard = document.createElement('div');
+        mesCard.className = 'mes-card'; // Estilo neomórfico
+        
+        mesCard.innerHTML = `
+            <h3>${mes.nombre}</h3>
+            <div class="quincena-seccion">
+                <div class="q-box">
+                    <strong>1ª Quincena</strong>
+                    <ul>${renderizarEmpleados(mes.q1, index, 'q1')}</ul>
+                </div>
+                <div class="q-box">
+                    <strong>2ª Quincena</strong>
+                    <ul>${renderizarEmpleados(mes.q2, index, 'q2')}</ul>
+                </div>
+            </div>
+        `;
+        container.appendChild(mesCard);
+    });
+    actualizarFooter();
+}
+
+function renderizarEmpleados(lista, mesIndex, quincena) {
+    let html = "";
+    // Mostramos los nombres o "Hueco libre"
+    for (let i = 0; i < 2; i++) {
+        if (lista[i]) {
+            html += `<li>${lista[i]} <button onclick="eliminarVigilante(${mesIndex}, '${quincena}', ${i})">×</button></li>`;
+        } else {
+            html += `<li class="hueco-libre">Disponible</li>`;
+        }
+    }
+    return html;
+}
+
+function asignarVacaciones() {
+    const nombre = document.getElementById('nombre-empleado').value.trim();
+    const mesIndex = document.getElementById('select-mes').value;
+    const quincena = document.getElementById('select-quincena').value;
+
+    if (!nombre) return alert("Escribe un nombre");
+
+    if (cuadrante[mesIndex][quincena].length < 2) {
+        cuadrante[mesIndex][quincena].push(nombre);
+        guardarYRenderizar();
+        document.getElementById('nombre-empleado').value = "";
+    } else {
+        alert("⚠️ Error: Ya hay 2 personas en esta quincena. Máximo alcanzado.");
+    }
+}
+
+function eliminarVigilante(mesIndex, quincena, vigilanteIndex) {
+    cuadrante[mesIndex][quincena].splice(vigilanteIndex, 1);
+    guardarYRenderizar();
+}
+
+function guardarYRenderizar() {
+    localStorage.setItem('vacaciones_seguridad', JSON.stringify(cuadrante));
+    renderizarCuadrante();
+}
+
+function actualizarFooter() {
+    document.getElementById('year').textContent = new Date().getFullYear();
+}
+
+window.onload = renderizarCuadrante;
+</script>
+</body>
+</html>
