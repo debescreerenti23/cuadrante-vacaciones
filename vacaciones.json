@@ -1,0 +1,14 @@
+[
+  { "nombre": "Enero", "q1": [], "q2": [] },
+  { "nombre": "Febrero", "q1": [], "q2": [] },
+  { "nombre": "Marzo", "q1": [], "q2": [] },
+  { "nombre": "Abril", "q1": [], "q2": [] },
+  { "nombre": "Mayo", "q1": [], "q2": [] },
+  { "nombre": "Junio", "q1": [], "q2": [] },
+  { "nombre": "Julio", "q1": [], "q2": [] },
+  { "nombre": "Agosto", "q1": [], "q2": [] },
+  { "nombre": "Septiembre", "q1": [], "q2": [] },
+  { "nombre": "Octubre", "q1": [], "q2": [] },
+  { "nombre": "Noviembre", "q1": [], "q2": [] },
+  { "nombre": "Diciembre", "q1": [], "q2": [] }
+]
