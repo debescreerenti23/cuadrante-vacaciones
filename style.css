@@ -1,0 +1,203 @@
+/* ==========================================================================
+   VARIABLES: Paleta "Seguridad y Control"
+   ========================================================================== */
+:root {
+    --bg-color: #e6e9ef;
+    --card-bg: #e6e9ef;
+    --text-main: #2c3e50;
+    --text-sec: #576574;
+    --accent: #2980b9; /* Azul Seguridad */
+    --accent-hover: #3498db;
+    --danger: #e74c3c;
+    --success: #27ae60;
+    --shadow-dark: #ced4da;
+    --shadow-light: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1e272e;
+    --card-bg: #1e272e;
+    --text-main: #f5f6fa;
+    --text-sec: #d2dae2;
+    --shadow-dark: #0f1418;
+    --shadow-light: #2d3436;
+}
+
+/* ==========================================================================
+   ESTILOS BASE
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 span {
+    display: block;
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   CONTROLES DE ASIGNACIÓN (Buscador/Selector)
+   ========================================================================== */
+.search-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.search-box input, .search-box select {
+    flex: 1;
+    min-width: 150px;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--card-bg);
+    box-shadow: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+    color: var(--text-main);
+    outline: none;
+}
+
+.search-box button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px var(--shadow-dark);
+    transition: transform 0.2s;
+}
+
+.search-box button:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   GRID DEL CUADRANTE
+   ========================================================================== */
+.grid-cuadrante {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.mes-card {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 9px 9px 18px var(--shadow-dark), -9px -9px 18px var(--shadow-light);
+}
+
+.mes-card h3 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--accent);
+    border-bottom: 2px solid var(--shadow-dark);
+    padding-bottom: 10px;
+}
+
+.quincena-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.q-box {
+    padding: 10px;
+    border-radius: 15px;
+    background: var(--card-bg);
+    box-shadow: inset 2px 2px 5px var(--shadow-dark), inset -2px -2px 5px var(--shadow-light);
+}
+
+.q-box strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: var(--text-sec);
+    text-transform: uppercase;
+}
+
+/* LISTA DE VIGILANTES */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background: var(--card-bg);
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
+    animation: fadeIn 0.3s ease;
+}
+
+.hueco-libre {
+    color: var(--success);
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    box-shadow: none;
+    border: 1px dashed var(--shadow-dark);
+}
+
+li button {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   FOOTER (Tu sello de identidad)
+   ========================================================================== */
+footer {
+    margin-top: 60px;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--shadow-dark);
+    color: var(--text-sec);
+}
+
+footer span {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
