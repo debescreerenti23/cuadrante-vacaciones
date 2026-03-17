@@ -12,33 +12,12 @@
     <div class="container">
     <header>
         <span class="header-icon">📅</span>
-        <h1>Gestión de Vacaciones <span>Las Terrazas de la Torre</span></h1>
-        <p class="header-subtitle" id="frase-gestion">Planifica los turnos del equipo de inseguridad.</p>
+        <h1>Vacaciones 2026 <span>Las Terrazas de la Torre</span></h1>
     </header>
 
-    <div class="search-box">
-        <input type="text" id="nombre-empleado" placeholder="Nombre del vigilante...">
-        <select id="select-mes">
-            <option value="0">Enero</option>
-            <option value="1">Febrero</option>
-            <option value="2">Marzo</option>
-            <option value="3">Abril</option>
-            <option value="4">Mayo</option>
-            <option value="5">Junio</option>
-            <option value="6">Julio</option>
-            <option value="7">Agosto</option>
-            <option value="8">Septiembre</option>
-            <option value="9">Octubre</option>
-            <option value="10">Noviembre</option>
-            <option value="11">Diciembre</option>
-        </select>
-        <select id="select-quincena">
-            <option value="q1">1ª Quincena (1-15)</option>
-            <option value="q2">2ª Quincena (16-31)</option>
-        </select>
-        <button onclick="asignarVacaciones()">Asignar</button>
-        <button onclick="copiarJSON()" style="background-color: var(--text-sec); margin-left: 10px;">
-            📋 Copiar JSON para Guardar
+    <div style="text-align: right; margin-bottom: 20px;" class="no-print">
+        <button onclick="imprimirCuadrante()" style="background-color: var(--accent); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: bold; box-shadow: 4px 4px 10px var(--shadow-dark);">
+        🖨️ Imprimir / Guardar PDF
         </button>
     </div>
 
@@ -46,7 +25,7 @@
         </div>
 
     <footer id="footer-app">
-        &copy; <span id="year"></span> - Seguridad Las Terrazas de la Torre - <span>javilindj</span>
+        &copy; <span id="year"></span> - InSeguridad Las Terrazas de la Torre - <span>javilindj</span>
     </footer>
 </div>
 

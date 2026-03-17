@@ -152,14 +152,18 @@ ul {
 li {
     background: var(--card-bg);
     margin-bottom: 8px;
-    padding: 8px 12px;
+    padding: 10px 15px; /* Un poco más de aire */
     border-radius: 8px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Alineado al centro */
     font-weight: 500;
     box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light);
-    animation: fadeIn 0.3s ease;
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
 .hueco-libre {
@@ -200,4 +204,34 @@ footer span {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@media print {
+    /* Escondemos el botón y elementos innecesarios al imprimir */
+    .no-print, button {
+        display: none !important;
+    }
+
+    body {
+        background-color: white !important;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Ajustamos el grid para que en el papel quepan bien los meses */
+    .grid-cuadrante {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 meses por fila en el papel */
+        gap: 15px;
+    }
+
+    .mes-card {
+        box-shadow: none !important; /* Quitamos el neomorfismo para ahorrar tinta */
+        border: 1px solid #ccc;
+        break-inside: avoid; /* Evita que un mes se corte entre dos páginas */
+    }
 }
