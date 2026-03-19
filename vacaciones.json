@@ -4,11 +4,11 @@
   { "nombre": "Marzo", "q1": [], "q2": [] },
   { "nombre": "Abril", "q1": ["SAMUEL", "HIDALGO"], "q2": [] },
   { "nombre": "Mayo", "q1": ["JUAN"], "q2": [] },
-  { "nombre": "Junio", "q1": [], "q2": ["PEDREÑO", "PAREDES"] },
+  { "nombre": "Junio", "q1": [], "q2": ["PEDREÑO", "PAREDES-ENRIQUE"] },
   { "nombre": "Julio", "q1": ["SAMUEL"], "q2": ["MILOU"] },
   { "nombre": "Agosto", "q1": ["JAVI"], "q2": ["HIDALGO"] },
   { "nombre": "Septiembre", "q1": ["PAREDES", "JUAN"], "q2": ["PEDREÑO"] },
   { "nombre": "Octubre", "q1": ["JAVI"], "q2": [] },
-  { "nombre": "Noviembre", "q1": [], "q2": [] },
+  { "nombre": "Noviembre", "q1": ["ENRIQUE"], "q2": [] },
   { "nombre": "Diciembre", "q1": [], "q2": [] }
 ]
