@@ -67,4 +67,17 @@ function imprimirCuadrante() {
     document.title = tituloOriginal;
 }
 
+const tema = document.getElementById('btn-tema');
+const emoji = document.getAnimations('emoji');
+
+tema.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode')
+
+    if(document.body.classList.contains('dark-mode')) {
+        emoji.textContent = "Oscuro"
+    } else {
+        emoji.textContent = "Claro"
+    }
+});
+
 window.onload = cargarDatos;
