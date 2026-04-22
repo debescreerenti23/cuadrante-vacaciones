@@ -62,6 +62,25 @@ body.dark-mode {
     color: #ccc;
 }
 
+.header-icon {
+    font-size: 2rem;
+}
+
+.dark-mode .mes-card{
+    box-shadow: none;
+}
+
+.dark-mode .search-box button {
+    box-shadow: none;
+}
+
+
+#btn-tema {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+}
 /* ==========================================================================
    CONTROLES DE ASIGNACIÓN (Buscador/Selector)
    ========================================================================== */
