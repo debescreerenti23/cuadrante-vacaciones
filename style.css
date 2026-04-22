@@ -80,6 +80,7 @@ body.dark-mode {
     border: none;
     font-size: 2rem;
     cursor: pointer;
+    outline: none;
 }
 /* ==========================================================================
    CONTROLES DE ASIGNACIÓN (Buscador/Selector)
